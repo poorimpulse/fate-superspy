@@ -6,11 +6,13 @@
     "wintersmith-sass": "^0.3.0"
   },
   "scripts": {
-    "build": "wintersmith build"
+    "build": "wintersmith build",
+    "deploy": "gh-pages -d build -m 'auto-generated commit'"
   },
   "private": "true",
   "devDependencies": {
     "beverage": "0.0.6",
+    "gh-pages": "^0.8.0",
     "gulp": "^3.9.0",
     "gulp-npm-run": "0.0.3"
   }
