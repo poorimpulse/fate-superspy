@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "wintersmith build",
-    "deploy": "gh-pages -d build -m 'auto-generated commit'"
+    "deploy": "./node_modules/.bin/gh-pages -d build -m auto-generated"
   },
   "private": "true",
   "devDependencies": {
