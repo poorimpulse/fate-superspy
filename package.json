@@ -5,5 +5,13 @@
     "underscore": "1.4.x",
     "wintersmith-sass": "^0.3.0"
   },
-  "private": "true"
+  "scripts": {
+    "build": "wintersmith build"
+  },
+  "private": "true",
+  "devDependencies": {
+    "beverage": "0.0.6",
+    "gulp": "^3.9.0",
+    "gulp-npm-run": "0.0.3"
+  }
 }
