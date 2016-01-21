@@ -1,0 +1,49 @@
+block vars
+  - var title = ""
+mixin title(t)
+  - title = t
+mixin navSection(name, section)
+  if section
+    section.navSection(id=name)
+      h1= name
+      each sec,idx in section
+        section.navSubSection(id=idx)
+          h1= idx
+          ul.navItemList
+            each part,idx in sec
+              if part.metadata.title
+                - var isActive = (page.url == part.url) ? 'active' : ''
+                li.navItem(class=isActive)
+                  a(href=part.url)= part.metadata.title
+if page.metadata['title']
+  +title(page.metadata.title)
+doctype html
+html
+  head
+    link(href=contents.css['main.sass'].url rel="stylesheet")
+    title 
+      if title
+        | #{title} |#{' '}
+      = locals.name
+  body
+    header
+      h1= title || locals.name
+    nav.sidebar
+      +navSection("notables", contents.notables)
+      +navSection("mechanics", contents.mechanics)
+          
+    section.content
+      block content
+    section.footer
+      section.left
+        block left-footer
+          // About and contact links here
+      section.middle
+        block middle-footer
+          // recent changes?  maybe generated from git checkins?
+      section.right
+        block right-footer
+          // quick resource links like to fate srd, poorimpulse, and a few other places
+      section.copyright
+        p Something something open gaming license
+        p something something powered by fate, with links and stuff
