@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "moment": "2.3.x",
+    "typogr": "0.5.x",
+    "underscore": "1.4.x",
+    "wintersmith-sass": "^0.3.0"
+  },
+  "scripts": {
+    "build": "wintersmith build",
+    "deploy": "./node_modules/.bin/gh-pages -d build -m auto-generated"
+  },
+  "private": "true",
+  "devDependencies": {
+    "beverage": "0.0.6",
+    "gh-pages": "^0.8.0",
+    "gulp": "^3.9.0",
+    "gulp-npm-run": "0.0.3"
+  }
+}

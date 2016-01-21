@@ -1,0 +1,23 @@
+{
+  "locals": {
+    "url": "http://localhost:8000",
+    "name": "SuperSpy Fate System Toolkit",
+    "owner": "Someone",
+    "description": "Fate System Toolkit for a Spy-Themed Fate Core game"
+  },
+  "plugins": [
+    "wintersmith-sass"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  }
+}
