@@ -22,7 +22,7 @@ esac
 cd build
 git init
 git config user.name "Travis CI"
-git config user.email "noone@nowhere.com"
+git config user.email "me@russellhay.com"
 
 git add .
 git commit -m "auto-commit via travis"
