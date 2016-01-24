@@ -1,6 +1,6 @@
 {
   "locals": {
-    "url": "http://localhost:8000",
+    "url": "/fate-superspy",
     "name": "SuperSpy Fate System Toolkit",
     "owner": "Someone",
     "description": "Fate System Toolkit for a Spy-Themed Fate Core game"
