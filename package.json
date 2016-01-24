@@ -7,6 +7,7 @@
     "wintersmith-sass": "^0.3.0"
   },
   "scripts": {
+    "dev": "./node_modules/.bin/wintersmith preview --locals=dev-locals.json",
     "test": "./node_modules/.bin/wintersmith build",
     "deploy": "./node_modules/.bin/gh-pages -d build -m auto-generated"
   },
