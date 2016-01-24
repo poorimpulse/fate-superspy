@@ -1,3 +1,4 @@
+- console.log(locals)
 block vars
   - var title = ""
 mixin title(t)
@@ -12,15 +13,15 @@ mixin navSection(name, section)
           ul.navItemList
             each part,idx in sec
               if part.metadata.title
-                - var isActive = (page.url == locals.url + part.url) ? 'active' : ''
+                - var isActive = (page.url == part.url) ? 'active' : ''
                 li.navItem(class=isActive)
-                  a(href=locals.url + part.url)= part.metadata.title
+                  a(href=part.url)= part.metadata.title
 if page.metadata['title']
   +title(page.metadata.title)
 doctype html
 html
   head
-    link(href=locals.url + contents.css['main.sass'].url rel="stylesheet")
+    link(href=contents.css['main.sass'].url rel="stylesheet")
     != livereloadScript
     title 
       if title
