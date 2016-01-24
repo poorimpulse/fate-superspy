@@ -3,10 +3,11 @@
     "moment": "2.3.x",
     "typogr": "0.5.x",
     "underscore": "1.4.x",
+    "wintersmith": "^2.2.5",
     "wintersmith-sass": "^0.3.0"
   },
   "scripts": {
-    "build": "wintersmith build",
+    "test": "./node_modules/.bin/wintersmith build",
     "deploy": "./node_modules/.bin/gh-pages -d build -m auto-generated"
   },
   "private": "true",

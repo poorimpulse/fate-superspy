@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  "4.0"
+compiler: clang-3.6
+env:
+  global:
+    - CXX: clang-3.6
+    - GH_DEPLOYER: RussTheAerialist
+    - GH_REPO: github.com/poorimpulse/fate-superspy.git
+    - secure: "HeikxM2sx51c6S6aW2CwdnYom86wrKy/USQKTJI3BvwANZFzfKFWkkq/NsO3SK24K9kN7k0kw6K+IRoVzYdJi7gCQAFwo7Kqr5UgHiM5Cd5lhdOLgH1v4h5eL7OnNbH9D9x+1CzhrRepb6qBcWVHbGO2j1qyw6+AVdLd2mueKgGHu3IltlOt0no12a0GRTD39iEgX3jiuSgZiKUJH1WwtMFDM4OV9OuSOccnpgSEyPMY/3zXnaxrOqprLwCwxtolSZWmdhKyoDw8zhlD6g+Ut6dP1oVmvRCFBcVOC7EGGhfZABl0QoeQlPznReKlxNvFlL3FBpot5HaLeY0mrD+5kXE9mdMZbC5RepE9ZEcLqzbZU4rcFfEgbLs2/FbZbCWahj1cVyZI3ukqXYEHbGUqAhBWOwzYvgx5DjhyzajPUUl2vHvyVAaqGwT015pLN04ofkwcF6tgk668BMWQRHV0dbbJ/U0pxvDfAORaw6w2RHfSMzsIKOMt/HSrnhI+eTL0B5Fr8j4QSdLxedQ95qrqNJIRtCOleV4IVOxBRGDj3mgrD0Vnn4JpZ5XN7faL36DtejepDbP8F2GEPPJLr4LDKQcVy0DP0JZuPyqrf7yDWwRK40VSMl3cddMH5EQsmT8kCyxItRDS4cCw1uVZRcVunfp8O/HNXtFwU7Wovk9POMM="
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-precise-3.6
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-3.6
+      - g++-4.8
+before_install:
+  - gem install sass
+after_success:
+  - ./.travis/deploy.sh

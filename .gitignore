@@ -36,3 +36,4 @@ node_modules
 # Project Specific Things
 .sass-cache
 build
+.apikey
