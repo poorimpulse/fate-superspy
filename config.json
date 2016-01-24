@@ -6,7 +6,8 @@
     "description": "Fate System Toolkit for a Spy-Themed Fate Core game"
   },
   "plugins": [
-    "wintersmith-sass"
+    "wintersmith-sass",
+    "wintersmith-livereload"
   ],
   "require": {
     "moment": "moment",

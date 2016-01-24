@@ -21,29 +21,37 @@ doctype html
 html
   head
     link(href=contents.css['main.sass'].url rel="stylesheet")
+    != livereloadScript
     title 
       if title
         | #{title} |#{' '}
       = locals.name
+    style
+      | svg { max-width: 250px; }
   body
-    header
-      h1= title || locals.name
     nav.sidebar
       +navSection("notables", contents.notables)
       +navSection("mechanics", contents.mechanics)
+      .spacer &nbsp;
+      .logo
+        include ../svgs/fate.svg
           
-    section.content
-      block content
-    section.footer
-      section.left
-        block left-footer
-          // About and contact links here
-      section.middle
-        block middle-footer
-          // recent changes?  maybe generated from git checkins?
-      section.right
-        block right-footer
-          // quick resource links like to fate srd, poorimpulse, and a few other places
-      section.copyright
-        p Something something open gaming license
-        p something something powered by fate, with links and stuff
+    section.main
+      header.banner
+        h1= title || locals.name
+      section.content
+        block content
+      footer.footer
+        section.left.footer-column
+          block left-footer
+            // About and contact links here
+        section.middle.footer-column
+          block middle-footer
+            // recent changes?  maybe generated from git checkins?
+        section.right.footer-column
+          block right-footer
+            // quick resource links like to fate srd, poorimpulse, and a few other places
+        section.copyright
+          p This System Toolkit is licensed under the#{' '}
+            a(href="http://www.opengamingfoundation.org/ogl.html") Open Gaming License
+          p Fate™ is a trademark of Evil Hat Productions, LLC. The Powered by Fate logo is © Evil Hat Productions, LLC and is used with permission.

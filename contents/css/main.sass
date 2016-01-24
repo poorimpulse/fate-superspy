@@ -1,2 +1,33 @@
 @import bourbon/bourbon
 @import neat/neat
+
+$white: #fbfbf9
+$black: #110022
+$red: #fd2323
+
+$sidebar-color: $white
+$sidebar-text-color: $black
+$background-color: $black
+$main-text-color: $white
+$link-color: $red
+
+@import layout
+@import typography
+
+.sidebar
+  background: $sidebar-color
+  color: $sidebar-text-color
+
+body
+  background: $background-color
+  color: $main-text-color
+
+a
+  color: $link-color
+  text-decoration: none
+  font-weight: bold
+
+nav
+  a
+    color: $sidebar-text-color
+
