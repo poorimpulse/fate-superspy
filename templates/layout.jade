@@ -13,15 +13,15 @@ mixin navSection(name, section)
           ul.navItemList
             each part,idx in sec
               if part.metadata.title
-                - var isActive = (page.url == part.url) ? 'active' : ''
+                - var isActive = (page.url == locals.baseUrl + part.url) ? 'active' : ''
                 li.navItem(class=isActive)
-                  a(href=part.url)= part.metadata.title
+                  a(href=locals.baseUrl + part.url)= part.metadata.title
 if page.metadata['title']
   +title(page.metadata.title)
 doctype html
 html
   head
-    link(href=contents.css['main.sass'].url rel="stylesheet")
+    link(href=locals.baseUrl + contents.css['main.sass'].url rel="stylesheet")
     != livereloadScript
     title 
       if title
